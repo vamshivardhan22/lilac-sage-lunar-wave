@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Qualify Desk",
+      "hasCanvas": false,
+      "bodyTextLen": 1250,
+      "bodyTextHash": "e5620a5fb8ee8ecd8b3e2824ac24aaa93cfe80813402322f4ba892e1545c684e",
+      "bodyTextPrefix": "HOME CREDIT · LAP Qualify Desk System prompt, rule rehearsal, an",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Qualify Desk",
+      "hasCanvas": false,
+      "bodyTextLen": 1250,
+      "bodyTextHash": "e5620a5fb8ee8ecd8b3e2824ac24aaa93cfe80813402322f4ba892e1545c684e",
+      "bodyTextPrefix": "HOME CREDIT · LAP Qualify Desk System prompt, rule rehearsal, an",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
