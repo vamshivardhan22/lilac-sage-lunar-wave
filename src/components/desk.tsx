@@ -1,17 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
-import {
-  BookOpen,
-  Check,
-  CheckCircle2,
-  ClipboardList,
-  Copy,
-  Download,
-  History,
-  ListChecks,
-  Phone,
-  RotateCcw,
-  Volume2,
-} from "lucide-react";
+import { BookOpen, Check, ClipboardList, Copy, Download, History, ListChecks, Phone, RotateCcw, Volume2 } from "lucide-react";
 import { capturedCount, formatINR, handleUtterance, initialState, openingLine, simulate } from "@/lib/lap/engine";
 import { PROMPT_TEMPLATE, renderPrompt } from "@/lib/lap/prompt";
 import { OUTCOME_LABEL, SCENARIOS, type Scenario } from "@/lib/lap/scenarios";
@@ -24,6 +12,8 @@ import {
   type Language,
   type QualState,
 } from "@/lib/lap/types";
+import { CallLogsView, type CallLogEntry } from "./call-logs";
+import { SubmissionView } from "./submission";
 
 type View = "call" | "prompt" | "lab" | "approach" | "logs" | "submit";
 
@@ -32,24 +22,8 @@ interface Line {
   text: string;
 }
 
-interface CallLogEntry {
-  id: string;
-  callId: string;
-  scenario: string;
-  timestamp: string;
-  status: string;
-  duration: string;
-  recordingUrl: string;
-  transcript: string;
-  expected: string;
-  actual: string;
-  pass: boolean | null;
-  notes: string;
-}
-
 const LINKS_KEY = "qualify-desk-links-v1";
 const LOGS_KEY = "qualify-desk-call-logs-v1";
-const SUBMIT_KEY = "qualify-desk-submit-v1";
 
 function clockLabels() {
   const d = new Date();
@@ -291,12 +265,7 @@ export function Desk() {
           />
         )}
         {view === "submit" && (
-          <SubmissionView
-            profile={profile}
-            links={links}
-            callLogs={callLogs}
-            promptText={promptText}
-          />
+          <SubmissionView profile={profile} links={links} callLogs={callLogs} promptText={promptText} />
         )}
         {view === "approach" && <ApproachView onDownload={() => downloadText("lap-approach.md", APPROACH_MD)} />}
       </main>
